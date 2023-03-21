@@ -27,11 +27,11 @@ def reorder(A, B, window):
     '''
     
     N = len(A) # total number of days
-    if isinstance(B, list):
-        cost_matrix = np.median([np.absolute(A[:, None] - this_B[None, :]) for this_B in B], axis=0)
-    else:
-        assert len(A) == len(B)
-        cost_matrix = (A[:, None] - B[None, :])**2 
+    #if isinstance(B, list):
+    #    cost_matrix = np.median([np.absolute(A[:, None] - this_B[None, :]) for this_B in B], axis=0)
+    #else:
+    #    assert len(A) == len(B)
+    cost_matrix = (A[:, None] - B[None, :])**2 
     exclude_cost = cost_matrix.max()*10 # set arbitrarily high cost to prevent reordering of these points
 
     b = band_matrix(window, N)
