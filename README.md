@@ -1,6 +1,6 @@
-# CI_2023
+# Climate Informatics 2023: 'A locally time-invariant metric for climate model ensemble predictions of extreme risk'
 
-Code and data associated with the paper 'A locally time-invariant metric for climate model ensemble predictions of extreme risk.
+Code and data associated with the submission 'A locally time-invariant metric for climate model ensemble predictions of extreme risk'.
 
 ## 1. Data download
 
