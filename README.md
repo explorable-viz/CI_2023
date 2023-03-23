@@ -9,10 +9,10 @@ Data used to produce the results presented in tha paper are provided in the fold
 Analysis for other spatial locations, model realisations, climate variables, etc. can be run by downloading the relevant data using the notebook `data_download.ipynb`
 
 
-## Locally time-invariant permutations
+## 2. Locally time-invariant permutations
 
 A simple demonstration of the locally time-invariant permutation approach to model evaluation described in the paper is provided in `metric_demo.ipynb`.
 
-## Results
+## 3. Results
 
 The Bayesian model averaging weights and evaluation presented in the paper can be reproduced using the notebook `bayesian_model_averaging.ipynb`.
