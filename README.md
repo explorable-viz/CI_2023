@@ -8,13 +8,14 @@ Data used to produce the results presented in tha paper are provided in the fold
 
 -- Notes:
 I'm using Python 3.11.5
+
+- Some non-exhaustive dependencies I've had to install:
 ```
 pip3 install esgf-pyclient
 pip3 install geopy
 pip3 install xclim
 pip3 install netcdf4
 ```
-
 - Download one of the `nc` dataset files from [the reanalysis reference dataset W5E5 Data set](https://data.isimip.org/datasets/96369b63-4fbf-4b90-8b58-79e5f50a385a/). The smallest one is [this one](https://files.isimip.org/ISIMIP3a/SecondaryInputData/climate/atmosphere/obsclim/global/daily/historical/W5E5v2.0/tas_W5E5v2.0_19790101-19801231.nc).
 - `python3 data_download.py`
 
