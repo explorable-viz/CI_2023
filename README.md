@@ -2,8 +2,6 @@
 
 Code and data associated with the submission 'A locally time-invariant metric for climate model ensemble predictions of extreme risk'.
 
-Setup: clone this repository and use `conda env create -f conda_environment.yml` to install relevant dependencies.
-
 ## 1. Data download
 
 Data used to produce the results presented in tha paper are provided in the folder 'data'. These are time-series taken from one realisation per model for the CMIP6 members GFDL-ESM4, IPSL-CM6A-LR, MPI-ESM1-2-HR, MRI-ESM2-0, and UKESM1-0-LL, for nine cities Paris, Chicago, Sydney, Tokyo, Kolkata, Kinshasa, Shenzhen and Santo Domingo. The same time-series from an observational reanalysis data, W5E5, are also provided.
