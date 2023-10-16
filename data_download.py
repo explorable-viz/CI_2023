@@ -12,6 +12,7 @@ from dask.diagnostics import ProgressBar
 from utils import *
 
 wd = os.getcwd()
+print(wd)
 # Make sure these directories exist
 models_dir=os.path.join(wd, 'data/models')
 reference_dir=os.path.join(wd, 'data/reference')
@@ -24,6 +25,7 @@ if not os.path.exists(reference_dir):
 city = 'Nairobi'
 latitude, longitude = get_coords(city)
 
+# %%
 # %%
 # Download any of the reanalysis reference .nc datasets W5E5 from: https://data.isimip.org/datasets/96369b63-4fbf-4b90-8b58-79e5f50a385a/, and add it to the current working directory.
 W5E5 = xr.open_mfdataset(os.path.join(wd, '*.nc'), engine = 'netcdf4').sel(lat=latitude, lon=longitude, method='nearest').convert_calendar("noleap")
@@ -87,9 +89,12 @@ for model, dataset in data.items():
     years, y_datasets = zip(*dataset.groupby("time.year"))
     fns=[identifier+f'_{y}.nc' for y in years]
     paths=[os.path.join(models_dir,fn) for fn in fns]
-    print(paths[-2:])
     with ProgressBar():
         xr.save_mfdataset(y_datasets[-2:], paths[-2:], mode="w") # saving only 2 years of data for demo
+        ### For the purpsoe of inspecting the dataset as a pandas dataframe
+        df = dataset.to_dataframe()
+        print("Dataframe for (", model, ",", city, "):", df)
+
 
 # %%
 os.chdir(wd)
@@ -102,5 +107,14 @@ fns=[identifier+f'_{y}.nc' for y in years]
 paths=[os.path.join(reference_dir,fn) for fn in fns]
 with ProgressBar():
     xr.save_mfdataset(y_datasets[-2:], paths[-2:], mode="w")
+
+# # %%
+# ds = xr.open_dataset('/home/minh/Documents/CI_2023/data/models/GFDL-ESM4_Nairobi_1979.nc')
+# df = ds.to_dataframe()
+# print(df)
+
+
+# %%
+
 
 
